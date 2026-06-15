@@ -10,7 +10,7 @@ on: [push]
 
 env:
   QT_VERSION: "6.6.2"
-  QT_CREATOR_VERSION: "19.0.0"
+  QT_CREATOR_VERSION: "18.0.2"
   QT_MIRRORS: download.qt.io;mirrors.ocf.berkeley.edu/qt;ftp.fau.de/qtproject;mirror.bit.edu.cn/qtproject
 
 # The Jobs
@@ -76,30 +76,12 @@ jobs:
       matrix:
         config:
           - {
-              name: "win64",
-              os: windows-latest,
-              sys: "windows",
-              arch: "x64",
-              qt_arch: "win64_msvc2019_64",
-              qtc_platform: "windows_x64",
-              environment_script: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat",
-              is_msvc: true
-            }
-          - {
               name: "linux",
-              os: ubuntu-22.04,
+              os: ubuntu-20.04,
               sys: "linux",
               arch: "x64",
               qt_arch: "",
               qtc_platform: "linux_x64"
-            }
-          - {
-              name: "macos",
-              os: macos-latest,
-              sys: "osx",
-              arch: "x64",
-              qt_arch: "",
-              qtc_platform: "mac_x64"
             }
       fail-fast: false
 
